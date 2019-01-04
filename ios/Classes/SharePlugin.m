@@ -67,6 +67,8 @@ static NSString *const PLATFORM_CHANNEL = @"plugins.flutter.io/share";
           NSString *path = sharedItems[@"path"];
           UIImage *image = [UIImage imageWithContentsOfFile:path];
           [items addObject:image];
+          NSString *text = sharedItems[@"text"];
+          [items addObject:text];
       }
       activityViewController =
             [[UIActivityViewController alloc] initWithActivityItems:items
