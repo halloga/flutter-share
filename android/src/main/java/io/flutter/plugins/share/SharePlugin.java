@@ -122,6 +122,7 @@ public class SharePlugin implements MethodChannel.MethodCallHandler {
 			File imageFile = new File(path);
 			Uri contentUri = FileProvider.getUriForFile(mRegistrar.context(), "io.flutter.plugins.share.provider", imageFile);
 			shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
+			shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 			if (!TextUtils.isEmpty(text)) {
 				shareIntent.putExtra(Intent.EXTRA_TEXT, text);
 			}
