@@ -73,6 +73,8 @@ static NSString *const PLATFORM_CHANNEL = @"plugins.flutter.io/share";
       activityViewController =
             [[UIActivityViewController alloc] initWithActivityItems:items
                                               applicationActivities:nil];
+
+      [activityViewController setValue:sharedItems[@"title"] forKey:@"subject"];
   } 
   else if ([share_type isEqualToString:@"*/*"])
   {
