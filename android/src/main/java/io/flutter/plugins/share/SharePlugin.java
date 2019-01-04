@@ -8,8 +8,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
+
+import 	android.support.v4.content.FileProvider;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -116,7 +119,9 @@ public class SharePlugin implements MethodChannel.MethodCallHandler {
 			shareIntent.putExtra(Intent.EXTRA_SUBJECT, title);
 		}
 		if (!ShareType.TYPE_PLAIN_TEXT.equals(shareType)) {
-			shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(path));
+			File imageFile = new File(path);
+			Uri contentUri = FileProvider.getUriForFile(mRegistrar.context(), "io.flutter.plugins.share.provider", imageFile);
+			shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
 			if (!TextUtils.isEmpty(text)) {
 				shareIntent.putExtra(Intent.EXTRA_TEXT, text);
 			}
