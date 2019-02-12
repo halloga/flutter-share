@@ -12,7 +12,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Map;
 
-import 	android.support.v4.content.FileProvider;
+import 	androidx.core.content.FileProvider;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
