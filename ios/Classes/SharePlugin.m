@@ -73,8 +73,6 @@ static NSString *const PLATFORM_CHANNEL = @"plugins.flutter.io/share";
       activityViewController =
             [[UIActivityViewController alloc] initWithActivityItems:items
                                               applicationActivities:nil];
-
-      [activityViewController setValue:sharedItems[@"title"] forKey:@"subject"];
   } 
   else if ([share_type isEqualToString:@"*/*"])
   {
@@ -120,6 +118,9 @@ static NSString *const PLATFORM_CHANNEL = @"plugins.flutter.io/share";
   {
       NSLog(@"Unknown mimetype");
   }
+
+    [activityViewController setValue:sharedItems[@"title"] forKey:@"subject"];
+
     activityViewController.popoverPresentationController.sourceView = controller.view;
     if (!CGRectIsEmpty(origin)) {
         activityViewController.popoverPresentationController.sourceRect = origin;
