@@ -3,7 +3,7 @@
     <application>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="io.flutter.plugins.share.provider"
+            android:authorities="${applicationId}.flutter.plugins.share.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
