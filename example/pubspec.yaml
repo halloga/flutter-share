@@ -4,7 +4,7 @@ description: Demonstrates how to use the share plugin.
 dependencies:
   flutter:
     sdk: flutter
-  share:
+  flutter_share:
     path: ../
 
 flutter:
